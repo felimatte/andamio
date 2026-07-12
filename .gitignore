@@ -1,0 +1,22 @@
+# Secretos — claves, contraseñas y credenciales nunca van a GitHub
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Dependencias (por si alguna herramienta instala paquetes vía npx/node)
+node_modules/
+
+# Temporales y registros
+*.log
+.tmp/
+scratchpad/
+
+# Artefactos de Playwright (capturas, snapshots, logs de navegador)
+.playwright-mcp/
