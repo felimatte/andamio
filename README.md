@@ -92,6 +92,38 @@ así se ejecutan igual todas las veces, con un checklist final):
 | 2. Varios agentes especializados | La sesión principal coordina; el `investigador` busca, el `implementador` ejecuta el volumen y el `revisor` audita, cada uno con su propia memoria limpia |
 | 3. Verificación autónoma | La sección "Cuándo está terminado" de `CLAUDE.md`: el agente no decide solo que terminó — tiene que cumplir la consigna, tener las fuentes y pasar por el revisor |
 
+## El método por fases (cuando el proyecto es software)
+
+Si es un desarrollo (una app, una automatización, un bot), Andamio no deja que la IA
+tire código a lo loco. Primero se **planifica todo de punta a punta en fases**, y recién
+cuando el plan está cerrado y revisado se construye. Cada fase cierra unas decisiones y
+las deja escritas:
+
+| Fase | Qué define |
+|---|---|
+| 0 · Idea y objetivo | Qué se hace, para quién y qué queda afuera |
+| 1 · Qué hace | Las pantallas y el recorrido del usuario, paso a paso |
+| 2 · Stack | Con qué herramientas se construye — y cuánto cuesta al mes |
+| 3 · Estructura y seguridad | Dónde vive cada cosa y cómo se protege desde el día cero |
+| 4 · Kit de marca | La identidad visual (colores, tipografía) cerrada en *design tokens* |
+| 5 · Roadmap | Las etapas de construcción, cada una con su prueba automática |
+| 🚪 Puerta | El `revisor` aprueba el plan. **Sin ese OK, no se escribe una línea de código.** |
+| 6 · Construir y testear | Etapa por etapa, dejando cada una probada antes de seguir |
+| 7 · Lanzar y cuidar | Publicación, monitoreo y chequeos finales de seguridad |
+
+La **Fase 4 (kit de marca)** tiene su propio flujo guiado (la skill `/kit-de-marca`):
+armás la identidad visual a partir de referencias que la IA mira de verdad, y queda un
+contrato contra el que se controla que la app final sea fiel a lo que pediste. Todo el
+método vive en `desarrollos/`.
+
+## Te avisa cuándo cortar la sesión
+
+Las sesiones largas de IA se degradan sin que lo notes: se llenan de contexto y la
+calidad cae. Andamio está configurado para que el agente **te avise por iniciativa
+propia** cuando la sesión se está cargando o cuando cerró un bloque de trabajo — no
+espera a que se lo pidas. Antes de cortar deja un traspaso (*handoff*) en `progress/`
+para que puedas retomar desde cero, en esa u otra computadora, sin explicar nada.
+
 ## Cuidar el gasto
 
 El modelo más capaz es también el más caro, y usarlo para tipear volumen es
