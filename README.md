@@ -7,6 +7,24 @@ escritura, organización, documentos, negocios.
 No necesitás saber programar para usarlo. Vos describís qué querés; el agente
 hace el trabajo y este kit lo mantiene ordenado y honesto.
 
+## Qué problema resuelve
+
+Los asistentes de IA tienen tres defectos que arruinan el trabajo serio: **se
+olvidan de todo** entre una sesión y otra, **inventan datos** con total seguridad, y
+te entregan un **desorden sin verificar**. Andamio ataca los tres: pone la memoria en
+archivos que no se pierden, obliga a separar lo verificado de lo supuesto, y no da
+nada por terminado hasta que pasa una revisión.
+
+## Requisitos (una vez por computadora)
+
+- **[Claude Code](https://claude.com/claude-code)** — el asistente que lee este kit y
+  hace el trabajo (sirve igual cualquier otra IA que lea archivos de instrucciones).
+- **git** y **Node.js** — git guarda y versiona tu proyecto; Node.js lo necesitan
+  Context7 y Playwright (sin él fallan en silencio).
+
+Con eso instalado, cloná este repositorio (o decile a Claude *"cloná el andamio"*) y
+ya estás listo para el primer paso 👇
+
 ## Cómo arrancar un proyecto nuevo
 
 **No necesitás varios repos: alcanza con uno, _andamio_.** Adentro ya viene todo lo
